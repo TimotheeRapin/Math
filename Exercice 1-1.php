@@ -1,8 +1,13 @@
 <?php
-$A = ;
-$B = ;
+$a = 0;
+$b = 1.5;
 
-$X = ($A + $B) / 2;
+
+$x = ($a + $b) / 2;
+$tolerance = 0.001;
+
+$f = $x^-4 - $x^4 - $x^3 + 4;
+
 /*
  * f(x)>0 ?
  * $B = $X;
@@ -13,25 +18,46 @@ $X = ($A + $B) / 2;
  * while($B - $A > $tolerance)
  */
 
+// Trouver f de x si x = 0
+while 
+
+while (abs($x) > $tolerance) {
+    $x = ($a + $b) / 2;
+
+    if ($x >= 0) {
+        $b = $x;
+    }
+    else {
+        $a = $x;
+    }
+
+    echo "x = " . $x . "\n";
+    echo "a = " . $a . "\n";
+    echo "b = " . $b . "\n\n";
+}
+
+
 /*
-$x=0;
-$n = ($x*3*3*3)-($x*2*2)+($x*3)-1;
+$n = ($X*3*3*3)-($X*2*2)+($X*3)-1;
 $tolerance = 0.000001; // tolérance d'erreur acceptable
 
 if ($n == 0) { // vérification si n est exactement égal à zéro
-    echo "La valeur de x est : " . $x . "\n";
+    echo "La valeur de x est : " . $X . "\n";
 } else {
     while (abs($n) > $tolerance) { // utilisation de la valeur absolue de n
-        $n = ($x*3*3*3)-($x*2*2)+($x*3)-1;
+        $n = ($X*3*3*3)-($X*2*2)+($X*3)-1;
         if ($n>0) {
-            $x+=0.00000000000000000000001;
+            $X+=$tolerance;
         } else if ($n<0) {
-            $x-=0.00000000000000000000001;
+            $X-=$tolerance;
         }
-        echo "\n" . "x = " . $x . "\n";
+        echo "\n" . "x = " . $X . "\n";
         echo "n = " . $n . "\n";
     }
-    echo "La valeur de x est : " . $x . "\n";
+    echo "La valeur de x est : " . $X . "\n";
 }
 */
+
+/*
+$f($x) = $x^7 - $x^4 - $x^3 + 4;*/
 
